@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latihan 4 Flex Box</title>
+    
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+
+  <style>
+    * {
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      margin: 0;
+    }
+
+    body {  
+      background-color: rgb(68, 67, 67);
+    }
+
+    .wrapper, .content, .footer {
+      margin: 0 auto;
+      width: 100%;
+      max-width: 1000px;
+    }
+
+    /* Nav */
+    nav {
+      background-color: rgb(40, 40, 40);
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    nav a {
+      font-weight: bold;
+      text-decoration: none;
+      text-align: center;
+      color: white;
+      display: block;
+      padding: 15px;
+    }
+
+    nav a:hover {
+      background-color: rgb(61, 61, 61);
+    }
+
+    a.tw {
+      background-image: url(../../gambarCSS/tw.png);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 80%;
+    }
+
+    a.fb {
+      background-image: url(../../gambarCSS/ig.png);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 80%;
+    }
+
+    .social a {
+      text-indent: -100000px;
+    }
+
+    .social {
+      max-width: 80px;
+      margin: 0 auto;
+    }
+
+    nav ul.social {
+      display: flex;
+      flex: 1 1 0;
+    }
+
+    nav ul.social li {
+      flex: 1 1 0;
+    }
+
+    /* Content */
+    .content {
+      box-sizing: border-box;
+      border: 10px solid  rgb(40, 40, 40);
+      border-top: 0;
+      border-bottom: 0;
+      background-color: rgb(165, 165, 165);
+    }
+
+    .box {
+      display: flex;
+    }
+
+    .pertama {
+      justify-content: space-evenly;
+    }
+
+    .halaman {
+      margin: 20px 10px;
+      background-color: rgb(141, 141, 141);
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    .halaman:hover {
+      background-color: rgb(113, 113, 113);
+    }
+
+    .satu {
+      width: 70%;
+      max-width: 650px;
+      height: 400px;
+    }
+
+    .dua {
+      min-width: 200px;
+      height: 400px;
+    }
+
+    .kedua {
+      justify-content: space-evenly;
+      padding: 10px;
+    }
+
+    .tiga {
+      flex-grow: 1;
+      flex-shrink: 0;
+      height: 400px;
+    }
+
+    .empat {
+      flex-grow:1.5;
+      flex-shrink: 1;
+      height: 400px;
+    }
+
+    .lima {
+      flex-grow: 1;
+      flex-shrink: 0;
+      height: 400px;
+    }
+
+    .box.ketiga {
+      display: block;
+      width: 95%;
+      margin: auto;
+      padding: 10px;
+    }
+
+    .enam {
+      margin: 20px auto;
+      width: 85%;
+      height: 400px;
+    }
+
+    .tujuh {
+      margin: 20px auto;
+      width: 90%;
+      height: 400px;
+    }
+
+    .box.keempat {
+      display: block;
+      padding: 5px;
+      padding: 20px;
+    }
+
+    .delapan, .sembilan, .sepuluh {
+      margin: 15px auto;
+      width: 95%;
+      height: 200px;
+    }
+
+    /* Footer */ 
+    .footer {
+      box-sizing: border-box;
+      background-color:  rgb(40, 40, 40);
+      color: white;
+      text-align: center;
+      font-weight: bold;
+      padding: 15px;
+      cursor: pointer;
+    }
+
+    .footer:hover {
+      color: rgb(185, 185, 185);
+    }
+
+    /* Responsive */
+    @media screen and (min-width: 768px) {
+      nav {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      nav ul {
+        display: flex;
+      }
+
+      nav li {
+        flex: 1 1 0;
+      }
+
+      nav ul.social {
+        margin: 0;
+      }
+
+      .box.ketiga {
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      .enam {
+        flex: 1;
+        margin: 10px;
+      }
+
+      .tujuh {
+        flex: 1.7;
+        margin: 10px;
+      }
+
+      .box.keempat {
+        display: flex;
+      }
+
+      .delapan {
+      margin: 10px;
+      flex: 1;
+      height: 200px;
+    }
+
+      .sembilan {
+      margin: 10px;
+      flex: 1;
+      height: 200px;
+    }
+
+      .sepuluh {
+      margin: 10px;
+      flex: 1;
+      height: 200px;
+    }
+  }
+
+  </style>
+  <body>
+    <div class="wrapper">
+      <nav>
+        <ul>
+          <li><a href="">Home</a></li>
+          <li><a href="">About</a></li>
+          <li><a href="">Store</a></li>
+          <li><a href="">Contact</a></li>
+        </ul>
+        <ul class="social">
+          <li><a href="" class="fb">Facebook</a></li>
+          <li><a href="" class="tw">Twitter</a></li>
+        </ul>
+      </nav>
+
+      <div class="content">
+        <div class="box pertama">
+          <div class="halaman satu"></div>
+          <div class="halaman dua "></div>
+        </div>
+
+        <div class="box kedua">
+          <div class="halaman tiga"></div>
+          <div class="halaman empat"></div>
+          <div class="halaman lima"></div>
+        </div>
+
+        <div class="box ketiga">
+          <div class="halaman enam"></div>
+          <div class="halaman tujuh"></div>
+        </div>
+
+        <div class="box keempat">
+          <div class="halaman delapan"></div>
+          <div class="halaman sembilan"></div>
+          <div class="halaman sepuluh"></div>
+        </div>
+      </div>
+
+      <div class="footer">
+        &copy; Ello Rabyndra
+      </div>
+    </div>
+  </body>
+</html>
